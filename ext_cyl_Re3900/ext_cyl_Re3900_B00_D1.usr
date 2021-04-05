@@ -81,7 +81,7 @@ c         call gfldr("ext_cyl_Re3900_B00_T140.f00010")
 !     write out probes
       if (mod(ISTEP,10).eq.0) call hpts()
       
-      iastep    = 10000
+      iastep    = 25000
       param(68) = iastep
 
       if (istep.gt.0.and. mod(istep,iastep).eq.0) param(63) = 1 ! 64-bit avg
