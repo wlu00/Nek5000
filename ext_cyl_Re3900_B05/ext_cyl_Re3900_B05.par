@@ -1,0 +1,41 @@
+#
+# nek parameter file
+#
+[GENERAL] 
+#startFrom = ext_cyl_Re3900_B00_T140.f00010
+stopAt = endTime
+endTime = 1000
+polynomialOrder = 7
+PnPnFormulation = yes
+minNumProcesses = 1
+#maxNumHistoryPoints = 1000
+
+#writeControl = timeStep
+
+
+dt = 1e-3
+timeStepper = bdf3
+extrapolation = OIFS
+variableDt = yes
+targetCFL = 3.5
+
+writeControl = timeStep#runTime
+writeInterval = 10
+
+#filtering = hpfrt
+#filterWeight = 10	
+#filterCutoffRatio = 0.9
+
+
+[PROBLEMTYPE]
+equation = incompNS
+
+[PRESSURE]
+residualTol = 1e-04
+residualProj = yes
+
+[VELOCITY]
+residualTol = 1e-6
+residualProj = no
+density = 1
+viscosity = -3900
